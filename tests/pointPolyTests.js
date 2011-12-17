@@ -67,34 +67,3 @@ test("Outside", function() {
 		"The point with two crossing is outside");
 });
 
-/*********************
- * Utility functions *
- *********************/
-
-function rightNumber(poly)
-{
-	return poly.vertices.length == poly.sides.length;
-}
-
-function allDefined(poly)
-{
-	var defined = true;
-	for(i = 0; i < poly.vertices.length; i++)
-		if ((poly.vertices.x === undefined) || (poly.vertices.y === undefined))
-			defined = false;
-	return defined;
-}
-
-function getProtoName(obj) {
-    if (obj && obj.constructor && obj.constructor.toString) {
-        var arr = obj.constructor.toString().match(
-            /function\s*(\w+)/);
-
-        if (arr && arr.length == 2) {
-            return arr[1];
-        }
-    }
-
-    return undefined;
-}
-
